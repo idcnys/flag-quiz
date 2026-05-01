@@ -1,2 +1,3 @@
 # flag-quiz-algo
-Algorithms
+
+## Play this game here -> (Website Url)[https://bitto-saha.github.io/flag-quiz-algo/]
