@@ -210,6 +210,7 @@ const nameEl = document.getElementById("name");
 const scoreEl = document.getElementById("score");
 const lifeEl = document.getElementById("life");
 const qnEl = document.getElementById("qus");
+const hsEl = document.getElementById("highScore");
 
 const elem1 = document.getElementById("elem1");
 const elem2 = document.getElementById("elem2");
@@ -219,10 +220,12 @@ const elem4 = document.getElementById("elem4");
 let score = parseInt(localStorage.getItem("score")) || 0;
 let life = parseInt(localStorage.getItem("life")) || 3;
 let qn = parseInt(localStorage.getItem("qus")) || 1;
+let highScore = parseInt(localStorage.getItem("highScore")) || 0;
 
 scoreEl.innerHTML = score;
 lifeEl.innerHTML = life;
 qnEl.innerHTML = qn;
+hsEl.innerHTML = highScore;
 
 let correctAnswer = "";
 
@@ -293,6 +296,10 @@ function attachEvents() {
                     localStorage.setItem("score", 0);
                     localStorage.setItem("life", 3);
                     localStorage.setItem("qus", 1);
+                    if (score >= highScore) {
+                        highScore = score;
+                        localStorage.setItem("highScore", highScore);
+                    }
                     
                     location.reload();
                 } else {
